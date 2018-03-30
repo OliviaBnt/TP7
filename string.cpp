@@ -13,9 +13,14 @@ string::string(char c){
 string::~string(){
   delete[] tableau_;
 }
+
 void string::printtest(){
 	int i = 0;
 	for (i;i<size_;i++){
 		printf("%c \n",tableau_[i]);
 	}
+}
+
+int capacity(){
+  return capacity_;
 }

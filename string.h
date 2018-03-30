@@ -12,8 +12,7 @@ class string{
 		//int string::max_size();
 		//void resize (int n);
 		//Olivia
-		
-	  //int capacity();
+		int capacity();
 	  //bool empty();
 	  //void reserve(int n);
 
