@@ -21,6 +21,14 @@ void string::printtest(){
 	}
 }
 
-int capacity(){
+int string::capacity(){
   return capacity_;
+}
+
+bool string::empty(){
+  bool empty = false;
+  if(size_ == 0){
+    empty = true;
+  }
+  return empty;
 }
