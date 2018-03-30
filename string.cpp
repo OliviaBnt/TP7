@@ -17,10 +17,14 @@ string::~string(){
 void string::printtest(){
 	int i = 0;
 	for (i;i<size_;i++){
-		printf("%c \n",tableau_[i]);
+		printf("%c ",tableau_[i]);
+		printf("\n");
 	}
 }
-
-int capacity(){
+int string::length(){
+	return size_;
+}
+	
+int string::capacity(){
   return capacity_;
 }
