@@ -16,9 +16,9 @@ class string{
 		//string::+(string);
 		//Olivia
 		//~string();
-	  	//int capacity();
-	  	//bool empty();
-	  	//void reserve(int n);
+	  //int capacity();
+	  //bool empty();
+	  //void reserve(int n);
 
 		
 		
