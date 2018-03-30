@@ -41,9 +41,20 @@ int string::capacity(){
 * (c'est a dire si sa taille est nulle)
 */
 bool string::empty(){
-  bool empty = false;
-  if(size_ == 0){
-    empty = true;
-  }
-  return empty;
+	bool empty = false;
+	if(size_ == 0){
+		empty = true;
+	}
+	return empty;
+}
+
+/*
+* Cette fonction verifie si un changement de la capacite est nécessaire 
+* en fonction de la taille n du string. La capacite augmente alors jusqu'a
+* n+1 caracteres
+*/
+void string::reserve(int n){
+	if(capacity_<= n){
+		capacity_ = n+1;
+	}
 }

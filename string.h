@@ -17,7 +17,7 @@ class string{
 		//Olivia
 		int capacity();
 	  bool empty();
-	  //void reserve(int n);
+	  void reserve(int n);
 
 		
 		
