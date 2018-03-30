@@ -10,6 +10,9 @@ string::string(char c){
 	this->capacity_=10;	
 }
 
+string::~string(){
+  delete[] tableau_;
+}
 void string::printtest(){
 	int i = 0;
 	for (i;i<size_;i++){

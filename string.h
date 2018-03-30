@@ -3,7 +3,7 @@ class string{
 	public:
 		string(char c);
 		void printtest();
-
+		~string();
 		//Lea
 		//string::string(const string& str);
 		//int size() const
@@ -12,7 +12,7 @@ class string{
 		//int string::max_size();
 		//void resize (int n);
 		//Olivia
-		//~string();
+		
 	  //int capacity();
 	  //bool empty();
 	  //void reserve(int n);
