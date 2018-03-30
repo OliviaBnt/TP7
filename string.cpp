@@ -10,6 +10,9 @@ string::string(char c){
 	this->capacity_=10;	
 }
 
+/*
+* Destructeur
+*/
 string::~string(){
   delete[] tableau_;
 }
@@ -24,7 +27,23 @@ void string::printtest(){
 int string::length(){
 	return size_;
 }
-	
+
+/*
+* Renvoie la taille de l'espace de stockage alloué pour le string
+* en bytes
+*/
 int string::capacity(){
   return capacity_;
+}
+
+/*
+* Retourne true si le string est vide 
+* (c'est a dire si sa taille est nulle)
+*/
+bool string::empty(){
+  bool empty = false;
+  if(size_ == 0){
+    empty = true;
+  }
+  return empty;
 }
