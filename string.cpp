@@ -27,6 +27,11 @@ void string::printtest(){
 int string::length(){
 	return size_;
 }
+int string::max_size(){
+	return taillemax;
+}
+
+
 
 /*
 * Renvoie la taille de l'espace de stockage alloué pour le string

@@ -10,7 +10,7 @@ class string{
 		//Nathan
 		//string::string(s-string?);
 		int length();
-		//int string::max_size();
+		int max_size();
 		//void resize (int n);
 		//string::=(char);
 		//string::+(char*);
