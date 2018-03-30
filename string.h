@@ -12,8 +12,8 @@ class string{
 		//int string::length();
 		//int string::max_size();
 		//void resize (int n);
-		//string::=(char*);
-		//string::+(string);
+		//string::=(char);
+		//string::+(char*);
 		//Olivia
 		
 	  //int capacity();
