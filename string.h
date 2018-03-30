@@ -3,7 +3,10 @@ class string{
 	public:
 		string(char c);
 		void printtest();
-	
+	  //~string();
+	  //int capacity();
+	  //bool empty();
+	  //void reserve(int n);
 	protected:
 		
 		
