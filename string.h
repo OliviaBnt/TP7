@@ -23,9 +23,25 @@ class string{
 		
 	
 	private:
+	  /*
+	  * Capacite maximale qu'un string peut atteindre
+	  */
 		const int taillemax = 50;
+		
+		/*
+		* Longueur de la chaine de char
+		*/
 		int size_;
+		
+		/*
+		* Taille du tableau contenant le string
+		*/
 		int capacity_;
+		
+		/*
+		* Tableau contenant le string
+		* (tableau de char)
+		*/
 		char* tableau_;
 	
 	
