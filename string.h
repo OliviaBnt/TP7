@@ -5,6 +5,7 @@ class string{
 		void printtest();
 		//Lea
 		//string::string(const string& str);
+		//int size() const
 		//Nathan
 		//int string::length();
 		//int string::max_size();
