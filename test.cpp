@@ -7,6 +7,8 @@ int main()
 {
 	string s1 ('k');
 	
+	//string s2 ('');
+	
 	printf("attendu k:" );//test constructeur
     s1.printtest();
     
@@ -16,7 +18,9 @@ int main()
     
     printf ("attendu 50:%d\n" ,s1.max_size());
     
+    printf("attendu false (0) : %d\n", s1.empty());
     
+    //printf("attendu true (1) : %d\n", s2.empty());
     
     return 0;
 }
