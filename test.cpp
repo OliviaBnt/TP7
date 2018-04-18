@@ -26,5 +26,6 @@ int main()
 	s1 = &c;
 	printf("attendu f: ");
 	s1.printtest();
+	//printf("attendu ff (0) : %d\n", s1+s1);
     return 0;
 }

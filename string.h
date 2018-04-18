@@ -19,6 +19,7 @@ class string{
 	  	bool empty();
 	  	void reserve(int n);
 		string& operator=(const char* s);
+		string& operator+ (const string& rhs);
 
 		
 		

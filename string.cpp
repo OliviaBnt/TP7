@@ -65,14 +65,37 @@ void string::reserve(int n){
 }
 
 /*
-* Le string prend la valeur contenue dans ce qui est pointé par s
-* La valeur est remplacée. S'il reste des caractères dans les autres cases
-* du tableau_ celles-ci ne sont pas prises en compte car la présence du \0
-* signale la fin du string.
+* Le string prend la valur du c-string
 */
 string& string::operator=(const char* s){
-	tableau_[0]=*s;
-	tableau_[1]='\0';
-	size_=1;
+	int n = 0;
+    while (s[n] != '\0'){
+		n++;
+	}
+	int length = n;
+	delete[] tableau_;
+	tableau_   = new char[length];
+    for (int j=0; j < length; j++){
+        tableau_[j] = s[j];
+	}
 	return *this;
 }
+
+/*
+string& string::operator+(const string& rhs){
+	int len = size_ + rhs.size();
+    char* str = new char[len];
+
+    for (int j=0; j < size_; j++)
+        str[j] = tableau_[j];
+
+    for (unsigned i=0; i < rhs.size(); i++)
+        str[size_+i] = rhs[i];
+
+    delete[] tableau_;
+    size_ = len;
+    tableau_   = str;
+	capacity_ = len+1;
+	return *this;
+}
+*/
