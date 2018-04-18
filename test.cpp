@@ -22,5 +22,9 @@ int main()
     
     //printf("attendu true (1) : %d\n", s2.empty());
     
+	char c = 'f';
+	s1 = &c;
+	printf("attendu f: ");
+	s1.printtest();
     return 0;
 }

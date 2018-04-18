@@ -16,8 +16,9 @@ class string{
 		//string::+(char*);
 		//Olivia
 		int capacity();
-	  bool empty();
-	  void reserve(int n);
+	  	bool empty();
+	  	void reserve(int n);
+		string& operator=(const char* s);
 
 		
 		

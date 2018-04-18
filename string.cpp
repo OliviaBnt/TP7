@@ -14,7 +14,7 @@ string::string(char c){
 * Destructeur
 */
 string::~string(){
-  delete[] tableau_;
+	delete[] tableau_;
 }
 
 void string::printtest(){
@@ -38,7 +38,7 @@ int string::max_size(){
 * en bytes
 */
 int string::capacity(){
-  return capacity_;
+	return capacity_;
 }
 
 /*
@@ -62,4 +62,17 @@ void string::reserve(int n){
 	if(capacity_<= n){
 		capacity_ = n+1;
 	}
+}
+
+/*
+* Le string prend la valeur contenue dans ce qui est pointé par s
+* La valeur est remplacée. S'il reste des caractères dans les autres cases
+* du tableau_ celles-ci ne sont pas prises en compte car la présence du \0
+* signale la fin du string.
+*/
+string& string::operator=(const char* s){
+	tableau_[0]=*s;
+	tableau_[1]='\0';
+	size_=1;
+	return *this;
 }
