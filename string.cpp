@@ -96,8 +96,10 @@ void String::reserve(unsigned int reserve_size){
         delete[] tmpArray;
     }
 }
-
-
+/*
+modifie size_, si la nouvelle taille est plus petite les derniers caractères sont supprimés, 
+si elle est plus grande les cases suplémentaires sont fixées à nullchar
+*/
 void String::resize(unsigned int new_size){
     if(new_size >= capacity_)
         reserve(new_size);
@@ -137,7 +139,9 @@ String& String::operator=(const char *c_str){
 }
 
 
-
+/*
+modifie la valeur du string pour la fixer à un caractère donné en argument
+*/
 String& String::operator=(char c){
     size_ = 1;
     if(capacity_ < 1)
@@ -147,7 +151,9 @@ String& String::operator=(char c){
     return *this;
 }
 
-
+/*
+ajoute un tableau de caractère à la fin du string
+*/
 String& String::operator+(char* c_str){
     int other_size = 0;
     while(c_str[other_size] != '\0'){other_size ++;}
