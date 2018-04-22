@@ -41,6 +41,12 @@ char* String::c_str(void) const { return tableau_; }
 //size()
 unsigned int String::size(void) const { return size_; }
 
+//clear()
+void String::clear(){
+	tableau_[0]='\0';
+	size_=0;
+}
+
 /*
 * Methode de debuggage
 *
