@@ -49,11 +49,11 @@ void String::clear(){
 
 /*
 * Methode de debuggage
-*
+*/
 void String::debug(void){
     cout << "String : " << endl << "Size : " << size_ << endl << "Capacity : " << capacity_ << endl << "String : \"" << tableau_ << "\"" << endl;
 }
-*/
+
 
 /*
 * Renvoie la taille du String en nombre de caratères
