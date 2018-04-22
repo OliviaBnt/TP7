@@ -84,7 +84,7 @@ void String::resize(unsigned int new_size){
         capacity_ = new_size;
         size_ = capacity_;
         tableau_ = new char[capacity_+1];
-        for(int i(0); i < mSize; i++){
+        for(int i(0); i < size_; i++){
             tableau_[i] = tmpArray[i];
         }
         tableau_[capacity_] = '\0';
@@ -140,10 +140,10 @@ String& String::operator+(char* c_str){
     }
     char* tmpArray = tableau_;
     tableau_ = new char[capacity_+1];
-    for(int i(0); i < size_; i++){
+    for(unsigned int i(0); i < size_; i++){
         tableau_[i] = tmpArray[i];
     }
-    for(int i(0); i < other_size; i++){
+    for(unsigned int i(0); i < other_size; i++){
         tableau_[size_+i] = c_str[i];
     }
     size_ += other_size;
