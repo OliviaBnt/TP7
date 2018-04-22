@@ -5,7 +5,7 @@
 
 int main() 
 {
-	string s1 ('k');
+	String s1 ('k');
 	
 	//string s2 ('');
 	
