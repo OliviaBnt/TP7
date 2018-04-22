@@ -125,7 +125,7 @@ String& String::operator=(char c){
     return *this;
 }
 
-/*
+
 String& String::operator+(char* c_str){
     int other_size = 0;
     while(c_str[other_size] != '\0'){other_size ++;}
@@ -151,7 +151,7 @@ String& String::operator+(char* c_str){
     delete[] tmpArray;
     return *this;
 }
-*/
+
 
 
 /*
