@@ -1,13 +1,13 @@
 #include "string.h"
 
-using namespace std; 
+using namespace std;
 
 String::String(char c){
 	this->tableau_=(char*) malloc (11);
 	this->tableau_[0]=c;
 	this->tableau_[1]='\0';
 	this->size_=1;
-	this->capacity_=10;	
+	this->capacity_=10;
 }
 
 /*
@@ -50,13 +50,13 @@ unsigned int String::max_size() const {return MAX_STRING_SIZE;}
 unsigned int String::capacity() const{return capacity_;}
 
 /*
-* Renvoie true si le String est vide 
+* Renvoie true si le String est vide
 * (c'est a dire si sa taille est nulle)
 */
 bool String::empty() const{ return !size_;}
 
 /*
-* Cette fonction verifie si un changement de la capacite est nécessaire 
+* Cette fonction verifie si un changement de la capacite est nécessaire
 * en fonction de ce qui est souhaité
 */
 void String::reserve(unsigned int reserve_size){
@@ -71,6 +71,23 @@ void String::reserve(unsigned int reserve_size){
         for(unsigned int i(0); i < size_+1; i++){
             tableau_[i] = tmpArray[i];
         }
+        delete[] tmpArray;
+    }
+}
+
+
+void String::resize(unsigned int new_size){
+    if(new_size >= capacity_)
+        reserve(new_size);
+    else{
+        char* tmpArray = tableau_;
+        capacity_ = new_size;
+        size_ = capacity_;
+        tableau_ = new char[capacity_+1];
+        for(int i(0); i < mSize; i++){
+            tableau_[i] = tmpArray[i];
+        }
+        tableau_[capacity_] = '\0';
         delete[] tmpArray;
     }
 }
@@ -96,6 +113,47 @@ String& String::operator=(const char *c_str){
     }
     return *this;
 }
+
+
+
+/*String& String::operator=(char c){
+    size_ = 1;
+    if(capacity_ < 1)
+        reserve(1);
+    tableau_[0] = c;
+    tableau_[1] = '\0';
+    return *this;
+}*/
+
+/*
+String& String::operator+(char* c_str){
+    int other_size = 0;
+    while(c_str[other_size] != '\0'){other_size ++;}
+
+    if(size_ + other_size > MAX_STRING_SIZE){
+        cout << "[ERROR] Max capacity overflow!" << endl;
+        return *this;
+    }
+
+    if(size_ + other_size > capacity_){
+        reserve(size_+other_size);
+    }
+    char* tmpArray = tableau_;
+    tableau_ = new char[capacity_+1];
+    for(int i(0); i < size_; i++){
+        tableau_[i] = tmpArray[i];
+    }
+    for(int i(0); i < other_size; i++){
+        tableau_[size_+i] = c_str[i];
+    }
+    size_ += other_size;
+    tableau_[size_] = '\0';
+    delete[] tmpArray;
+    return *this;
+}
+*/
+
+
 /*
 String& String::operator+(const String& other){
     if(tableau_ + other.size() > MAX_STRING_SIZE){
