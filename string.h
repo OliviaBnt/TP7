@@ -21,7 +21,7 @@ class String{
 
     void debug();
 	void printtest();
-
+	void clear();
     /**Destructeur*/
     ~String();
 

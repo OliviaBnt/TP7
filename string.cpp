@@ -2,14 +2,25 @@
 
 using namespace std;
 
-String::String(char c){
-	this->tableau_=(char*) malloc (11);
-	this->tableau_[0]=c;
-	this->tableau_[1]='\0';
-	this->size_=1;
-	this->capacity_=10;
+/** Constructeur par défaut*/
+String::String(void) : tableau_(0)
+{
+    tableau_ = new char[1];
+    tableau_ = 0;
+    size_ = 0;
+    capacity_ = 0;
 }
 
+/** Constructeur avec c_string*/
+String::String(char* c_str) : tableau_(0), capacity_(0), size_(0)
+{
+    while(c_str[size_] != '\0'){size_ ++;}
+    capacity_ = size_;
+    tableau_ = new char[capacity_+1];
+    for(unsigned int i(0); i < size_+1; i++){
+        tableau_[i] = c_str[i];
+    }
+}
 /*
 * Destructeur
 */
@@ -20,9 +31,9 @@ String::~String(){
 void String::printtest(){
 	unsigned int i = 0;
 	for (i;i<size_;i++){
-		printf("%c ",tableau_[i]);
-		printf("\n");
+		printf("%c",tableau_[i]);
 	}
+	printf("\n");
 }
 
 /*
@@ -215,27 +226,27 @@ String& String::operator+(char c){
     return *this;
 }
 
-/*
+
 String& String::operator+(const String& other){
-    if(tableau_ + other.size() > MAX_STRING_SIZE){
+    if(size_ + other.size() > MAX_STRING_SIZE){
         cout << "[ERROR] Max capacity overflow!" << endl;
         return *this;
     }
 
-    if(tableau_ + other.size() > capacity_){
-        reserve(tableau_+other.size());
+    if(size_ + other.size() > capacity_){
+        reserve(size_+other.size());
     }
     char* tmpArray = tableau_;
     tableau_ = new char[capacity_+1];
-    for(unsigned int i(0); i < tableau_; i++){
+    for(unsigned int i(0); i < size_; i++){
         tableau_[i] = tmpArray[i];
     }
     for(unsigned int i(0); i < other.size(); i++){
-        tableau_[tableau_+i] = other.tableau_[i];
+        tableau_[size_+i] = other.tableau_[i];
     }
-    tableau_ += other.size();
-    tableau_[tableau_] = '\0';
+    size_ += other.size();
+    tableau_[size_] = '\0';
     delete[] tmpArray;
     return *this;
 }
-*/
+

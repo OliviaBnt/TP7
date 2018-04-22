@@ -5,7 +5,7 @@
 
 int main() 
 {
-	String s1 ('k');
+	String s1 ("k");
 	
 	//string s2 ('');
 	
@@ -31,19 +31,21 @@ int main()
 	s1= 'o';
 	printf ("attendu o: ");
 	s1.printtest();
-
-	/*s1=s1+'n';
+	
+	s1=s1+'n';
 	printf("attendu on: ");
 	s1.printtest();
-	*/
-	/*
+	
+	
 	String objet("Nathan");
     String objec2("Olivia");
     objec2 = objec2+objet;
     objec2 = objec2+"Lea";
+	objec2.debug();
     objec2.resize(10);
     objec2.debug();
-	*/
 	
+	
+
     return 0;
 }
