@@ -35,8 +35,11 @@ String::String(const String &str) : tableau_(0), capacity_(str.capacity_), size_
     }
 }
 
-//c_str
+//c_str()
 char* String::c_str(void) const { return tableau_; } 
+
+//size()
+unsigned int String::size(void) const { return size_; }
 
 /*
 * Methode de debuggage
