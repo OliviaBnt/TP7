@@ -26,6 +26,16 @@ void String::printtest(){
 }
 
 /*
+ * * Constructeur de copie*/
+String::String(const String &str) : tableau_(0), capacity_(str.capacity_), size_(str.size_)
+{
+    tableau_ = new char[capacity_+1];
+    for(int i(0); i < size_+1; i++){
+        tableau_[i] = str.tableau_[i];
+    }
+}
+
+/*
 * Methode de debuggage
 *
 void String::debug(void){
