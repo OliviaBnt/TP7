@@ -116,14 +116,14 @@ String& String::operator=(const char *c_str){
 
 
 
-/*String& String::operator=(char c){
+String& String::operator=(char c){
     size_ = 1;
     if(capacity_ < 1)
         reserve(1);
     tableau_[0] = c;
     tableau_[1] = '\0';
     return *this;
-}*/
+}
 
 /*
 String& String::operator+(char* c_str){
