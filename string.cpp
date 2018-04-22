@@ -35,6 +35,9 @@ String::String(const String &str) : tableau_(0), capacity_(str.capacity_), size_
     }
 }
 
+//c_str
+char* String::c_str(void) const { return tableau_; } 
+
 /*
 * Methode de debuggage
 *
