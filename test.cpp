@@ -41,8 +41,10 @@ int main()
     String objec2("Olivia");
     objec2 = objec2+objet;
     objec2 = objec2+"Lea";
+	printf("attendu 15 15 OliviaNathanLea:\n");
 	objec2.debug();
     objec2.resize(10);
+	printf("attendu 10 10 OliviaNath:\n");
     objec2.debug();
 	
 	
