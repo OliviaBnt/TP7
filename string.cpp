@@ -180,7 +180,19 @@ String& String::operator+(char* c_str){
     return *this;
 }
 
-
+//operateur=(string)
+String& String::operator=(const String &other){
+    if(other.capacity_ > capacity_){
+        reserve(other.capacity());
+    }
+    size_ = other.size_;
+    char* tmpArray = other.tableau_;
+    tableau_ = new char[capacity_+1];
+    for(int i(0); i < size_+1; i++){
+        tableau_[i] = tmpArray[i];
+    }
+    return *this;
+}
 
 /*
 String& String::operator+(const String& other){
