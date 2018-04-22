@@ -194,6 +194,27 @@ String& String::operator=(const String &other){
     return *this;
 }
 
+//operateur+(char)
+String& String::operator+(char c){
+    if(size_ + 1 > MAX_STRING_SIZE){
+        cout << "[ERROR] Max capacity overflow!" << endl;
+        return *this;
+    }
+    if(size_+1 > capacity_){
+        reserve(size_+1);
+    }
+    char* tmpArray = tableau_;
+    tableau_ = new char[capacity_+1];
+    for(int i(0); i < size_; i++){
+        tableau_[i] = tmpArray[i];
+    }
+    tableau_[size_] = c;
+    tableau_[size_+1] = '\0';
+    size_++;
+    delete[] tmpArray;
+    return *this;
+}
+
 /*
 String& String::operator+(const String& other){
     if(tableau_ + other.size() > MAX_STRING_SIZE){
